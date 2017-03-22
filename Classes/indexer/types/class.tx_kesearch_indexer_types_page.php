@@ -169,7 +169,8 @@ class tx_kesearch_indexer_types_page extends tx_kesearch_indexer_types
         $this->whereClauseForCType = implode(' OR ', $cTypes);
 
         // get all available sys_language_uid records
-        $this->sysLanguages = BackendUtility::getSystemLanguages();
+        /** @internal m.macasso commented out, called depricated function. Not working with multilingual websites! */
+        //$this->sysLanguages = BackendUtility::getSystemLanguages();
 
         // make file repository
         /* @var $this ->fileRepository \TYPO3\CMS\Core\Resource\FileRepository */
