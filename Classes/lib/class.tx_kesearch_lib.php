@@ -258,7 +258,8 @@ class tx_kesearch_lib extends \TYPO3\CMS\Frontend\Plugin\AbstractPlugin
         // add cssTag to header if set
         $cssFile = $GLOBALS['TSFE']->tmpl->getFileName($this->conf['cssFile']);
         if (!empty($cssFile)) {
-            $GLOBALS['TSFE']->getPageRenderer()->addCssFile($cssFile);
+            $pageRenderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+	    $pageRenderer->addCssFile($cssFile);
         }
     }
 
